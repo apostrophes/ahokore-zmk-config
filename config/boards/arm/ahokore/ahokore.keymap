@@ -21,7 +21,7 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping_term_ms = <225>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
             };
         };
@@ -31,17 +31,17 @@
 
         // DEFAULT LAYER COMBOS
 
-        // f + g
+        // F + G
         combo_tab {
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&kp TAB>;
             layers = <0>;
         };
-        // h + j, symmetrical 'reverse tab'
+        // H + J, symmetrical 'reverse tab'
         combo_shift_tab {
             timeout-ms = <50>;
-            key-positions = <14 15>;
+            key-positions = <15 16>;
             bindings = <&kp LS(TAB)>;
             layers = <0>;
         };
@@ -123,7 +123,8 @@
         default_layer {
     // -----------------------------------------------------------------------------------------
     // |  Q  |  W  |  E  |  R  |  T   |  Y  |  U   |  I  |  O  |  P  |
-    // |  A  |  S  |  D  |  F  |  G   |  H  |  J   |  K  |  L  |  ;  |  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
+    // |  A  |  S  |  D  |  F  |  G   |  H  |  J   |  K  |  L  |  ;  | 
+    // |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
     //             | CTL | SPC |  CMD | CMD | BSP  | CTL |
             bindings = <
     &kp Q      &kp W      &kp E      &kp R      &kp T     &kp Y     &kp U      &kp I      &kp O    &kp P
