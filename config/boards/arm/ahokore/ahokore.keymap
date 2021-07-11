@@ -55,16 +55,16 @@
 
         // since this is a 36 key layout and doesn't have these keys on the default layer anymore, 
         // make them from a vertical combo
-        combo_hyphen {
-            timeout-ms = <50>;
-            key-positions = <9 19>;
-            bindings = <&kp MINUS>;
-            layers = <0>;
-        }; 
         combo_apostrophe {
             timeout-ms = <50>;
-            key-positions = <19 29>;
+            key-positions = <9 19>;
             bindings = <&kp SINGLE_QUOTE>;
+            layers = <0>;
+        }; 
+        combo_hyphen {
+            timeout-ms = <50>;
+            key-positions = <19 29>;
+            bindings = <&kp MINUS>;
             layers = <0>;
         }; 
 
@@ -127,10 +127,10 @@
     // |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
     //             | CTL | SPC |  CMD | CMD | BSP  | CTL |
             bindings = <
-    &kp Q      &kp W      &kp E      &kp R      &kp T     &kp Y     &kp U      &kp I      &kp O    &kp P
-    &kp A      &kp S      &lt NAV D  &lt SYM F  &kp G     &kp H     &lt SYM J  &lt NUM K  &kp L    &kp SEMI
-    &kp Z      &kp X      &kp C      &kp V      &kp B     &kp N     &kp M      &kp COMMA  &kp DOT  &kp FSLH
-    &kp LCTRL  &kp SPACE  &kp LCMD   &kp RCMD  &kp BSPC  &kp RCTRL
+    &kp Q      &kp W            &kp E      &kp R      &kp T     &kp Y     &kp U      &kp I      &kp O    &kp P
+    &kp A      &kp S            &lt NAV D  &lt SYM F  &kp G     &kp H     &lt SYM J  &lt NUM K  &kp L    &kp SEMI
+    &kp Z      &kp X            &kp C      &kp V      &kp B     &kp N     &kp M      &kp COMMA  &kp DOT  &kp FSLH
+    &kp LCTRL  &hm LSHFT SPACE  &kp LCMD   &kp RCMD  &kp BSPC  &kp RCTRL
                         >;
         };
 
