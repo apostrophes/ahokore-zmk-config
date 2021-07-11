@@ -15,17 +15,16 @@
 #define FN 4
 
 / {
-
-behaviors {
-      hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping_term_ms = <225>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping_term_ms = <225>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            };
         };
-    };
 
     combos {
         compatible = "zmk,combos";
@@ -116,75 +115,77 @@ behaviors {
         };
     };
 };
-        keymap {
-                compatible = "zmk,keymap";
 
-                default_layer {
+keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T   |  Y  |  U   |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G   |  H  |  J   |  K  |  L  |  ;  |
 // |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
 //             | CTL | SPC |  CMD | CMD | BSP  | CTL |
-                        bindings = <
-   &kp Q      &kp W      &kp E      &kp R      &kp T     &kp Y     &kp U      &kp I      &kp O    &kp P
-   &kp A      &kp S      &hm NAV D  &hm SYM F  &kp G     &kp H     &hm SYM J  &hm NUM K  &kp L    &kp SEMI
-   &kp Z      &kp X      &kp C      &kp V      &kp B     &kp N     &kp M      &kp COMMA  &kp DOT  &kp FSLH
-   &kp LCTRL  &kp SPACE  &kp LCMD   &kp RCMD  &kp BSPC  &kp RCTRL
-                        >;
-                };
+        bindings = <
+&kp Q      &kp W      &kp E      &kp R      &kp T     &kp Y     &kp U      &kp I      &kp O    &kp P
+&kp A      &kp S      &hm NAV D  &hm SYM F  &kp G     &kp H     &hm SYM J  &hm NUM K  &kp L    &kp SEMI
+&kp Z      &kp X      &kp C      &kp V      &kp B     &kp N     &kp M      &kp COMMA  &kp DOT  &kp FSLH
+&kp LCTRL  &kp SPACE  &kp LCMD   &kp RCMD  &kp BSPC  &kp RCTRL
+                    >;
+    };
 
-                sym_layer {
+    sym_layer {
 // -----------------------------------------------------------------------------------------
 // |  #  |  @  |  (  |  )  |  ~  |  ^  |  +  |  $  |  %  |  _  |
 // |  <  |  >  |  {  |  }  |  _  |  *  |  &  |  |  |  !  |  =  |
 // |     |     |  [  |  ]  |     |     |     |     |     |  \  |
 //             |     |     |     |     |     |     |
-                        bindings = <
-   &kp HASH  &kp AT  &kp LPAR  &kp RPAR  &kp TILDE  &kp CARET        &kp KP_PLUS  &kp DOLLAR  &kp PRCNT  &kp UNDER
-   &kp LT    &kp GT  &kp LBRC  &kp RBRC  &kp UNDER  &kp KP_ASTERISK  &kp AMPS     &kp PIPE    &kp EXCL   &kp EQUAL
-   &trans    &trans  &kp LBKT  &kp RBKT  &trans     &trans           &trans       &trans      &trans     &kp BSLH
-   &trans    &trans  &trans    &trans    &trans     &trans
-                        >;
-                };
-                num_layer {
+                    bindings = <
+&kp HASH  &kp AT  &kp LPAR  &kp RPAR  &kp TILDE  &kp CARET        &kp KP_PLUS  &kp DOLLAR  &kp PRCNT  &kp UNDER
+&kp LT    &kp GT  &kp LBRC  &kp RBRC  &kp UNDER  &kp KP_ASTERISK  &kp AMPS     &kp PIPE    &kp EXCL   &kp EQUAL
+&trans    &trans  &kp LBKT  &kp RBKT  &trans     &trans           &trans       &trans      &trans     &kp BSLH
+&trans    &trans  &trans    &trans    &trans     &trans
+                    >;
+    };
+
+    num_layer {
 // -----------------------------------------------------------------------------------------
 // |     |  7  |  8  |  9  |     |     |     |     |     |     |
 // |  0  |  4  |  5  |  6  |     |     |     |     |     |     |
 // |     |  1  |  2  |  3  |     |     |     |     |     |     |
 //             |     |     |     |     |     |     |
-                        bindings = <
-   &trans  &kp N7  &kp N8  &kp N9  &trans  &trans  &trans  &trans  &trans  &trans
-   &kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans
-                        >;
-                };
+                    bindings = <
+&trans  &kp N7  &kp N8  &kp N9  &trans  &trans  &trans  &trans  &trans  &trans
+&kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans
+                    >;
+    };
 
-                nav_layer {
+    nav_layer {
 // -----------------------------------------------------------------------------------------
 // |     |     |     |      |     |      |      |  UP  | 1PASS |      |
 // |     |     |     |      |     |      | LEFT | DOWN |RIGHT  |      |
 // |     |     |     |      |     |      |      |      |       |      |
 //             |     |      |     |      |      |      |
-                        bindings = <
-   &trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp UP    &kp LG(BSLH)  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT     &trans
-   &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans        &trans
-   &trans  &trans  &trans  &trans  &trans  &trans
-                        >;
-                };
-                fn_layer {
+                    bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp UP    &kp LG(BSLH)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans
+                    >;
+    };
+
+    fn_layer {
 // -----------------------------------------------------------------------------------------
 // |  F12 |  F7  |  F8  |  F9  |     |      |      |      |BTCLR| RST |
 // |  F11 |  F4  |  F5  |  F6  |     |      |      |      | BT0 |CMENU|
 // |  F10 |  F1  |  F2  |  F3  |     |      |      |      | BT1 |BOOT |
 //               |      |      |     |      |      |      |
-                        bindings = <
-   &kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans  &trans  &trans  &bt BT_CLR    &reset
-   &kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans  &trans  &trans  &bt BT_SEL 0  &kp K_CMENU
-   &kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans  &trans  &trans  &bt BT_SEL 1  &bootloader
-   &trans   &trans  &trans  &trans  &trans  &trans
-                        >;
-                };
-        };
+                    bindings = <
+&kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans  &trans  &trans  &bt BT_CLR    &reset
+&kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans  &trans  &trans  &bt BT_SEL 0  &kp K_CMENU
+&kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans  &trans  &trans  &bt BT_SEL 1  &bootloader
+&trans   &trans  &trans  &trans  &trans  &trans
+                    >;
+    };
 };
