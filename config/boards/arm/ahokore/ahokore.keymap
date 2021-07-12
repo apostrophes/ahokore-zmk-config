@@ -127,10 +127,10 @@
     // |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
     //             | CTL | SPC |  CMD | CMD | BSP  | CTL |
             bindings = <
-    &kp Q      &kp W            &kp E      &kp R      &kp T     &kp Y     &kp U      &kp I      &kp O    &kp P
-    &kp A      &kp S            &lt NAV D  &lt SYM F  &kp G     &kp H     &lt SYM J  &lt NUM K  &kp L    &kp SEMI
-    &kp Z      &kp X            &kp C      &kp V      &kp B     &kp N     &kp M      &kp COMMA  &kp DOT  &kp FSLH
-    &kp LCTRL  &hm LSHFT SPACE  &kp LCMD   &kp RCMD  &kp BSPC  &kp RCTRL
+    &kp Q      &kp W            &kp E      &kp R      &kp T            &kp Y        &kp U      &kp I      &kp O    &kp P
+    &kp A      &kp S            &lt NAV D  &lt SYM F  &hm LSHFT G      &hm RSHFT H  &lt SYM J  &lt NUM K  &kp L    &kp SEMI
+    &kp Z      &kp X            &kp C      &kp V      &kp B            &kp N        &kp M      &kp COMMA  &kp DOT  &kp FSLH
+    &kp LCTRL  &hm LSHFT SPACE  &kp LCMD   &kp RCMD   &hm RSHIFT BSPC  &kp RCTRL
                         >;
         };
 
@@ -191,3 +191,4 @@
         };
     };
 };
+                    
